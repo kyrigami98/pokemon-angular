@@ -13,7 +13,7 @@ describe('Test game.ts', () => {
         const fight3 = new Fight(ratata, slowpoke);
         //game
         const game = new Game(fight1, fight2 ,fight3);
-        expect(game.gameWinner()).toBe('ratata');
+        expect(game.gameWinner()).toBe('slowpoke');
 
     })
 

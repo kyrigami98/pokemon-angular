@@ -12,12 +12,11 @@ export class Game{
     }
 
     gameWinner(){
-        if(this.fight1.gameWinner() === this.fight1.pokemon1.name){
-            return this.fight1.gameWinner();
-        }else if (this.fight1.gameWinner() === this.fight2.pokemon1.name) {
-            return this.fight1.gameWinner();
+        if(this.fight1.fightWinner() === this.fight2.fightWinner()  || this.fight2.fightWinner() === this.fight3.fightWinner()
+            || this.fight1.fightWinner() === this.fight3.fightWinner() ){
+            return this.fight1.fightWinner();
         }else{
-            return "continous...";
+            return this.fight2.fightWinner();
         }
     }
 
