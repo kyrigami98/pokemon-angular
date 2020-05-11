@@ -6,21 +6,20 @@ var Pokemon = /** @class */ (function () {
         this.name = name;
         this.speed = speed;
     }
-    Object.defineProperty(Pokemon.prototype, "name", {
-        get: function () {
-            return this._name;
-        },
-        set: function (name) {
-            this._name = name.charAt(0).toUpperCase() + name.slice(1);
-        },
-        enumerable: true,
-        configurable: true
-    });
     Pokemon.prototype.sayHello = function () {
-        console.log('Hello, my name is ' + this.name + this.speed + ', I have ID: ' + this.id);
+        return 'Hello' + this.name + ', I have speed: ' + this.speed;
     };
-    Pokemon.prototype.attack = function () {
-        console.log(this.name + ' make Attack tonnerre!');
+    Pokemon.prototype.attack = function (pokemon) {
+        return '' + pokemon.name + pokemon.speed + ', I have ID: ' + pokemon.id;
+    };
+    Pokemon.prototype.compareSpeed = function (a, b) {
+        console.log(a.speed);
+        if (a.speed > b.speed) {
+            return a.name;
+        }
+        else {
+            return b.name;
+        }
     };
     return Pokemon;
 }());

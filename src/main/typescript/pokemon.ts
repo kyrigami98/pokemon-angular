@@ -1,25 +1,28 @@
 export class Pokemon{
     id;
-    _name;
+    name;
     speed;
     constructor(id, name, speed) {
         this.id = id;
         this.name = name;
         this.speed = speed;
     }
-    set name(name) {
-        this._name = name.charAt(0).toUpperCase() + name.slice(1);
-    }
-    get name() {
-        return this._name;
-    }
 
     sayHello() {
-        return 'Hello' + this.name + this.speed +  ', I have ID: ' + this.id;
+        return 'Hello' + this.name + ', I have speed: ' + this.speed;
     }
 
-    attack() {
-        return this.name +' make Attack tonnerre!';
+    attack(pokemon: Pokemon) {
+        return '' + pokemon.name + pokemon.speed +  ', I have ID: ' + pokemon.id;
+    }
+    compareSpeed(a: Pokemon, b: Pokemon){
+        console.log(a.speed);
+        if(a.speed > b.speed){
+            return a.name;
+        }
+        else{
+            return b.name;
+        }
     }
 
 }
