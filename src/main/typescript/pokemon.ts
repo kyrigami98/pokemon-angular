@@ -2,10 +2,12 @@ export class Pokemon{
     id;
     name;
     speed;
-    constructor(id, name, speed) {
+    lifepoints;
+    constructor(id, name, speed, lifepoints) {
         this.id = id;
         this.name = name;
         this.speed = speed;
+        this.lifepoints = lifepoints;
     }
 
     sayHello() {
@@ -13,16 +15,8 @@ export class Pokemon{
     }
 
     attack(pokemon: Pokemon) {
-        return '' + pokemon.name + pokemon.speed +  ', I have ID: ' + pokemon.id;
-    }
-    compareSpeed(a: Pokemon, b: Pokemon){
-        console.log(a.speed);
-        if(a.speed > b.speed){
-            return a.name;
-        }
-        else{
-            return b.name;
-        }
+        pokemon.lifepoints = pokemon.lifepoints - 20;
+        return  this.name + ' attack ' + pokemon.name +  ' with 20 points';
     }
 
 }

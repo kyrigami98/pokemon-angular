@@ -4,10 +4,22 @@ import {Fight} from "../../main/typescript/fight";
 describe('Test fight.ts', () => {
 
     test('Compare speed', () => {
-        const ratata = new Pokemon(1, "ratata",100);
-        const slowpoke = new Pokemon(2,"slowpoke",2);
+        //pokemon
+        const ratata = new Pokemon(1, "ratata",100,100);
+        const slowpoke = new Pokemon(2,"slowpoke",2,100);
+        //round
         const fight = new Fight(ratata, slowpoke);
         expect(fight.compareSpeed()).toBe('ratata');
+
+    })
+
+    test('Found winner', () => {
+        //pokemons
+        const ratata = new Pokemon(1, "ratata",100,100);
+        const slowpoke = new Pokemon(2,"slowpoke",2,0);
+        //round
+        const fight = new Fight(ratata, slowpoke);
+        expect(fight.fightWinner()).toBe('ratata');
 
     })
 

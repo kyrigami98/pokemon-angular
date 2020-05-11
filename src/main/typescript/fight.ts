@@ -19,4 +19,14 @@ export class Fight{
         }
     }
 
+    fightWinner(){
+        if(this.pokemon1.lifepoints <= 0){
+            return this.pokemon2.name;
+        }else if(this.pokemon2.lifepoints <= 0) {
+            return this.pokemon1.name
+        }else{
+            return this.pokemon2.name
+        }
+    }
+
 }
